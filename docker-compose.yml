@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Service 1: The Backend API
+  api:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo_db:27017/financetracker
+      - PORT=5000
+    depends_on:
+      - mongo_db
+
+  # Service 2: The Frontend UI
+  client:
+    build: ./frontend
+    ports:
+      - "3000:80"  # Maps localhost:3000 to container port 80
+    depends_on:
+      - api
+
+  # Service 3: The Database
+  mongo_db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

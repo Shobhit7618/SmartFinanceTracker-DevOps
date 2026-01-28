@@ -1,0 +1,57 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* ADD THIS TO THE TOP OF THE FILE */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Prevents Navbar from covering the title */
+}
+
+/* ... keep the rest of your existing CSS below ... */
+body {
+  background-color: #f8f9fa;
+  /* ... */
+}
+/* Custom Floating Boxy Navbar */
+.navbar-boxy {
+  position: fixed;
+  top: 20px;
+  left: 10%;
+  width: 80%;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px 20px;
+  border: 1px solid #e9ecef;
+}
+
+.main-content {
+  padding-top: 100px; /* Space for fixed navbar */
+  min-height: 80vh;
+}
+
+.brand-text {
+  color: #198754; /* Bootstrap success color */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card-custom {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.card-custom:hover {
+  transform: translateY(-2px);
+}
+
+.footer {
+  margin-top: auto;
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+}
