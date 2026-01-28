@@ -14,7 +14,7 @@ export const Login = () => {
     e.preventDefault();
     try {
       // Updated port to 5001 as discussed
-      const res = await axios.post('http://localhost:5001/api/auth/login', formData);
+      const res = await axios.post('http://51.20.255.38:5000/api/auth/login', formData);
       login(res.data.user, res.data.token);
       navigate('/dashboard');
     } catch (err) { alert(err.response?.data?.msg || 'Login failed'); }
@@ -53,7 +53,7 @@ export const Signup = () => {
     if(formData.password !== formData.confirmPassword) return alert("Passwords don't match");
     try {
       // Updated port to 5001
-      const res = await axios.post('http://localhost:5001/api/auth/register', formData);
+      const res = await axios.post('http://51.20.255.38:5000/api/auth/register', formData);
       login(res.data.user, res.data.token);
       navigate('/dashboard');
     } catch (err) { alert(err.response?.data?.msg || 'Signup failed'); }
